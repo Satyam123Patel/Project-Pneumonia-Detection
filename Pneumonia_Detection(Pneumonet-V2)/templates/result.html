@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <h3 class="card-title">Prediction Result</h3>
+                <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded X-Ray" class="img-fluid mt-3">
+                <p class="mt-3"><strong>Prediction:</strong> {{ label }}</p>
+                <p><strong>Confidence:</strong> {{ confidence }}%</p>
+                <div class="d-grid gap-2 mt-4">
+                    <a href="{{ url_for('predict') }}" class="btn btn-primary">Upload Another Image</a>
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">View Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Pneumonia Detection System{% endblock %}
+
+{% block content %}
+<h2 class="text-center">Dashboard</h2>
+<p class="text-center">Welcome, {{ current_user.username }}!</p>
+<h5>Your Predictions</h5>
+{% if predictions %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for prediction in predictions %}
+        <tr>
+            <td>{{ prediction.filename }}</td>
+            <td>{{ prediction.prediction }}</td>
+            <td>{{ prediction.confidence }}%</td>
+            <td>{{ prediction.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-info">No predictions yet. Start by uploading an image.</div>
+{% endif %}
+{% endblock %}

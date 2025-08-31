@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Chest X-Ray{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="text-center">Upload Chest X-Ray</h2>
+        <p class="text-center">Select a chest X-ray image to analyze for signs of pneumonia.</p>
+        <form method="POST" enctype="multipart/form-data" class="mt-4">
+            <div class="mb-3">
+                <input type="file" class="form-control" name="images" multiple required>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Upload and Predict</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

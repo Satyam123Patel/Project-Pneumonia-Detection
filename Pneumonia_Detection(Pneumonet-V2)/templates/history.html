@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction History{% endblock %}
+
+{% block content %}
+<h2>Prediction History</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for prediction in predictions %}
+        <tr>
+            <td>{{ prediction.filename }}</td>
+            <td>{{ prediction.prediction }}</td>
+            <td>{{ prediction.confidence }}%</td>
+            <td>{{ prediction.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Chest X-Ray{% endblock %}
+
+{% block content %}
+<h2>Upload Chest X-Ray</h2>
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <input type="file" class="form-control" name="images" multiple required>
+    </div>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Upload and Predict</button>
+    </div>
+</form>
+{% if predictions %}
+<hr>
+<h3>Prediction Results</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in predictions %}
+        <tr>
+            <td>{{ result.filename }}</td>
+            <td>{{ result.label }}</td>
+            <td>{{ result.confidence }}%</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+{% endblock %}
