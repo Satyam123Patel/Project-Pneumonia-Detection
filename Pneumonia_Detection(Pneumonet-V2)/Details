@@ -1,6 +1,8 @@
 A dataset of Pneumonia is available in the Kagggle
 https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data  = This is the link to download the dataset 
 In this dataset 5000+ pneumonia images are there for training the model
+In this Pneumonia Detection model(Pneumonet-V2), several machine learning and deep learning tools and techniques are used
+Language used is Python and its lightweight framework Flask is used for building backend application.
 You need to set up the virtual environment and while running code somoe errors may be encountered as new versions are coming for the packages and one may not work on particular area so when error shows then as per the error need to fix that,use AI also if errors are becoming ridiculous
 Model do not learns well so need to apply techniques like early stopping,generalization and etc
 Also it is required to balance the images in the train,test and val folders as model may not perform well and may consider the images of the set in which more images are present
